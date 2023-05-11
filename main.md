@@ -2,11 +2,11 @@
 ## Researching Commands
 In this lab report, I will choose `grep` as my command.  
 ### Option One **`-c`**
-The option `-c` is used to count the number of occurrences words that you are looking for in a file.  
-This option is useful when you need to look for all the occurrences key words in these files.  
+The option `-c` is used to count the number of occurrences strings that you are looking for in a file.  
+This option is useful when you need to look for all the occurrences key strings in these files.  
 
 #### Example one:
-I called the `grep` command and use `-c` option for counting the number of occurences of the word `words` in the file `chapter-1.txt`.  
+I called the `grep` command and use `-c` option for counting the number of occurences of the string `words` in the file `chapter-1.txt`.  
 ```
 grep -c words ./technical/911report/chapter-1.txt
 ```
@@ -15,7 +15,7 @@ grep -c words ./technical/911report/chapter-1.txt
 grep -c words ./technical/911report/chapter-1.txt
 1
 ```
-This means that in file `chapter-1` only has one word of the word `words`
+This means that in file `chapter-1` only has one string of the word `words`
 
 #### Example two:
 This time I did the samething as above but intead of putting `chapter-1` at the end I put `*`.  
@@ -47,7 +47,7 @@ rep -c words ./technical/911report/*
 ```
 ### Option two: **`-i`**
 In example two I have choose to use `-i`.  
-The `-i` option will be used to search for the given sentence that matches the word we search for and this is case insensitve.
+The `-i` option will be used to search for the given sentence that matches the string we search for and this is case insensitve.
 #### Example one  
 It will be the same as calling option `-c`, but change the `-c` to `-i`.  
 ```
@@ -76,3 +76,24 @@ grep words ./technical/911report/*
 ./technical/911report/chapter-7.txt:                Zacarias Moussaoui. Binalshibh soon contacted KSM and, using code words, reported
 ```
 We can only clearly see the out put for the first file, others were very hard to see.  
+
+### Option three: **`-v`**
+The option `-v` option is used to return all the line that does not match the string that you are looking for.  
+#### Example one 
+```
+(base) zhenchenglin@ZhenchengdeMacBook-Pro docsearch % grep -v words ./technical/911report/chapter-1.txt
+
+
+
+"WE HAVE SOME PLANES"
+
+    Tuesday, September 11, 2001, dawned temperate and nearly cloudless in the eastern United States. Millions of men and women readied themselves for work. Some made their way to the Twin Towers, the signature structures of the World Trade Center complex in New York City. Others went to Arlington, Virginia, to the Pentagon. Across the Potomac River, the United States Congress was back in session. At the other end of Pennsylvania Avenue, people began to line up for a White House tour. In Sarasota, Florida, President George W. Bush went for an early morning run.
+
+    For those heading to an airport, weather conditions could not have been better for a safe and pleasant journey. Among the travelers were Mohamed Atta and Abdul Aziz al Omari, who arrived at the airport in Portland, Maine.
+
+INSIDE THE FOUR FLIGHTS
+
+(There are about 700 line hiden)
+...
+    He was, and is, right. But the conflict did not begin on 9/11. It had been publicly declared years earlier, most notably in a declaration faxed early in 1998 to an Arabic-language newspaper in London. Few Americans had noticed it. The fax had been sent from thousands of miles away by the followers of a Saudi exile gathered in one of the most remote and impoverished countries on earth.
+```                                         
