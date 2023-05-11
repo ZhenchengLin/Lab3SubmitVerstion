@@ -80,6 +80,7 @@ We can only clearly see the out put for the first file, others were very hard to
 ### Option three: **`-v`**
 The option `-v` option is used to return all the line that does not match the string that you are looking for.  
 #### Example one 
+This give use all the lines but the line that contines `words`.  
 ```
 (base) zhenchenglin@ZhenchengdeMacBook-Pro docsearch % grep -v words ./technical/911report/chapter-1.txt
 
@@ -97,3 +98,18 @@ INSIDE THE FOUR FLIGHTS
 ...
     He was, and is, right. But the conflict did not begin on 9/11. It had been publicly declared years earlier, most notably in a declaration faxed early in 1998 to an Arabic-language newspaper in London. Few Americans had noticed it. The fax had been sent from thousands of miles away by the followers of a Saudi exile gathered in one of the most remote and impoverished countries on earth.
 ```                                         
+#### Example two
+When using `-v` on big file like this will be very useless do to the large amount of output.
+```
+./technical/plos/pmed.0020249.txt:        with lower, and thus more realistic, challenge doses.
+./technical/plos/pmed.0020249.txt:        The belief that experiments involving realistically low challenge doses require
+./technical/plos/pmed.0020249.txt:        unfeasibly large numbers of animals has prevented the development of low-dose challenge
+./technical/plos/pmed.0020249.txt:        models. In this theoretical study, we show that, contrary to this widely held belief,
+./technical/plos/pmed.0020249.txt:        low-dose challenge experiments can be designed such that they do not require large numbers
+./technical/plos/pmed.0020249.txt:        of animals. Using statistical power analysis, we compare two experimental designs (see
+./technical/plos/pmed.0020249.txt:        Figure 1): (i) a single low-dose challenge design in which each animal is challenged only
+./technical/plos/pmed.0020249.txt:        once, and (ii) a repeated low-dose challenge design in which each animal is challenged
+./technical/plos/pmed.0020249.txt:        until it is infected or a predetermined maximum number of challenges is reached. We find
+./technical/plos/pmed.0020249.txt:        that the repeated low-dose challenge design does not require unfeasibly large numbers of
+./technical/plos/pmed.0020249.txt:        animals.
+```
